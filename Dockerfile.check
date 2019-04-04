@@ -1,0 +1,4 @@
+FROM golang:1.11.6
+ENV https_proxy ''
+RUN  HTTPS_PROXY=${https_proxy} go get -u -v honnef.co/go/tools/cmd/staticcheck \
+    && HTTPS_PROXY=${https_proxy} go get -u -v golang.org/x/lint/golint
